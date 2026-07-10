@@ -1,150 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Kraken LM Dashboard</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
-
+<title>NZXT Test</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="dashboard">
-
-    <!-- Glow -->
-    <div class="ringGlow"></div>
-
-    <!-- Main Gauge -->
-    <div class="gauge">
-
-        <svg class="ring" width="470" height="470" viewBox="0 0 470 470">
-
-            <defs>
-
-                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-
-                    <stop offset="0%" stop-color="#00e8ff"/>
-
-                    <stop offset="100%" stop-color="#00bfff"/>
-
-                </linearGradient>
-
-                <filter id="glow">
-
-                    <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-
-                    <feMerge>
-
-                        <feMergeNode in="coloredBlur"/>
-
-                        <feMergeNode in="SourceGraphic"/>
-
-                    </feMerge>
-
-                </filter>
-
-            </defs>
-
-            <!-- Background -->
-
-            <circle
-
-                class="track"
-
-                cx="235"
-
-                cy="235"
-
-                r="180"
-
-            />
-
-            <!-- Progress -->
-
-            <circle
-
-                id="progress"
-
-                class="progress"
-
-                cx="235"
-
-                cy="235"
-
-                r="180"
-
-            />
-
-        </svg>
-
-        <div class="center">
-
-            <div class="label">
-                CPU TEMP
-            </div>
-
-            <div id="cpuTemp" class="temp">
-                42°
-            </div>
-
-            <div class="usage">
-    PROCESSOR
+<div style="
+color:white;
+font-size:40px;
+text-align:center;
+margin-top:120px;
+">
+NZXT TEST SCREEN
 </div>
-
-        </div>
-
-    </div>
-
-    <!-- Bottom Stats -->
-
-    <div class="bottom">
-
-        <div class="card">
-
-            <div class="title">
-
-                GPU TEMP
-
-            </div>
-
-            <div id="gpuTemp" class="value">
-
-                36°
-
-            </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="card">
-
-            <div class="title">
-
-                GPU LOAD
-
-            </div>
-
-            <div id="gpuUsage" class="value">
-
-                18%
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script src="script.js"></script>
 
 </body>
 </html>
