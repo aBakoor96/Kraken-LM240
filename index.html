@@ -1,21 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>NZXT Test</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepCool Style Integration</title>
+  <style>
+    /* Reset and set up screen container optimized for Kraken Z73 (320x320) */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      width: 320px;
+      height: 320px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
 
+    /* Outer wrapper ensuring perfect centering within round or square screens */
+    .container {
+      width: 260px;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    /* Individual readout rows matching DeepCool layout segments */
+    .stat-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Main numeric display */
+    .value-container {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .value {
+      font-size: 72px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      /* DeepCool's signature glowing neon green/mint color */
+      color: #00f0ad; 
+      font-variant-numeric: tabular-nums;
+    }
+
+    .unit {
+      font-size: 24px;
+      font-weight: 600;
+      color: #00f0ad;
+      margin-left: 4px;
+    }
+
+    /* Small minimalistic labels below numbers */
+    .label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #888888;
+      margin-top: 2px;
+    }
+
+    /* Divider accent resembling the DeepCool physical panel line */
+    .divider {
+      width: 60px;
+      height: 2px;
+      background-color: #222222;
+      margin: 10px 0;
+    }
+
+    /* Subtle brand styling at the bottom */
+    .brand {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #333333;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+  </style>
+</head>
 <body>
 
-<div style="
-color:white;
-font-size:40px;
-text-align:center;
-margin-top:120px;
-">
-NZXT TEST SCREEN
-</div>
+  <div class="container">
+    <!-- CPU Section -->
+    <div class="stat-row">
+      <div class="value-container">
+        <span class="value" id="cpu-temp">--</span>
+        <span class="unit">°C</span>
+      </div>
+      <div class="label">CPU TEMP</div>
+    </div>
 
+    <div class="divider"></div>
+
+    <!-- GPU Section -->
+    <div class="stat-row">
+      <div class="value-container">
+        <span class="value" id="gpu-temp">--</span>
+        <span class="unit">°C</span>
+      </div>
+      <div class="label">GPU TEMP</div>
+    </div>
+    
+    <!-- Branding Accent -->
+    <div class="brand">DEEPCOOL ++</div>
+  </div>
+
+  <script>
+    // Hook into NZXT CAM's Web Integration API
+    window.nzxt = {
+      v1: {
+        onMonitoringDataUpdate: (data) => {
+          if (!data) return;
+
+          // Safe parsing handling both single objects and array structures
+          let cpuTemp = 0;
+          let gpuTemp = 0;
+
+          if (data.cpus && data.cpus.length > 0) {
+            cpuTemp = Math.round(data.cpus[0].temperature || 0);
+          } else if (data.cpus && data.cpus.temperature) {
+            cpuTemp = Math.round(data.cpus.temperature);
+          }
+
+          if (data.gpus && data.gpus.length > 0) {
+            gpuTemp = Math.round(data.gpus[0].temperature || 0);
+          } else if (data.gpus && data.gpus.temperature) {
+            gpuTemp = Math.round(data.gpus.temperature);
+          }
+
+          // Render updates to screen elements
+          if (cpuTemp > 0) {
+            document.getElementById('cpu-temp').textContent = cpuTemp;
+          }
+          if (gpuTemp > 0) {
+            document.getElementById('gpu-temp').textContent = gpuTemp;
+          }
+        }
+      }
+    };
+  </script>
 </body>
 </html>
