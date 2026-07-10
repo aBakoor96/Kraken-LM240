@@ -1,127 +1,218 @@
-:root{
-    --bg:#050607;
-    --panel:#0b0d0f;
-    --cyan:#00D8FF;
-    --cyan2:#29F0FF;
-    --text:#ffffff;
-    --muted:#7f8d96;
-}
-
 *{
-    margin:0;
-    padding:0;
     box-sizing:border-box;
 }
 
-html,body{
+
+body{
+
+    margin:0;
 
     width:320px;
     height:320px;
 
     overflow:hidden;
 
-    background:#050607;
+    background:#000;
 
-    font-family:'Orbitron',sans-serif;
+    font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    color:white;
 
 }
 
 
-#dashboard{
+
+.screen{
 
     width:320px;
     height:320px;
 
-}
+    display:flex;
 
+    flex-direction:column;
 
-/* Main circle */
+    align-items:center;
 
-.gauge{
-
-    left:35px;
-    top:30px;
-
-    width:250px;
-    height:250px;
+    justify-content:center;
 
 }
 
-
-.ring{
-
-    width:250px;
-    height:250px;
-
-}
-
-
-.track,
-.progress{
-
-    stroke-width:8;
-
-}
-
-
-/* Center */
-
-.label{
-
-    font-size:9px;
-
-    letter-spacing:4px;
-
-}
-
-
-.temp{
-
-    font-size:55px;
-
-    font-weight:500;
-
-}
-
-
-.usage{
-
-    font-size:10px;
-
-}
-
-
-/* Bottom GPU */
-
-.bottom{
-
-    bottom:18px;
-
-    left:35px;
-
-    right:35px;
-
-}
 
 
 .title{
 
-    font-size:8px;
+    font-size:14px;
 
-    letter-spacing:3px;
+    letter-spacing:5px;
 
-}
+    color:#777;
 
-
-.value{
-
-    font-size:25px;
+    margin-bottom:18px;
 
 }
 
 
-.divider{
 
-    height:30px;
+.gauges{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+
+.gauge{
+
+    width:125px;
+
+    height:125px;
+
+    border-radius:50%;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    background:
+
+    radial-gradient(
+    circle,
+    #090909 55%,
+    transparent 57%
+    ),
+
+    conic-gradient(
+    #00eaff,
+    #00eaff 70%,
+    #222 70%
+    );
+
+
+    box-shadow:
+
+    0 0 18px #00eaff66,
+
+    inset 0 0 20px #00eaff33;
+
+
+    animation:
+    glow 2s infinite alternate;
+
+}
+
+
+
+
+.gpu{
+
+
+background:
+
+radial-gradient(
+circle,
+#090909 55%,
+transparent 57%
+),
+
+conic-gradient(
+#0077ff,
+#0077ff 70%,
+#222 70%
+);
+
+
+box-shadow:
+
+0 0 18px #0077ff66,
+
+inset 0 0 20px #0077ff33;
+
+
+}
+
+
+
+.inside{
+
+text-align:center;
+
+}
+
+
+
+.label{
+
+font-size:18px;
+
+letter-spacing:2px;
+
+color:#999;
+
+}
+
+
+
+.temp{
+
+font-size:48px;
+
+font-weight:700;
+
+}
+
+
+
+.temp small{
+
+font-size:18px;
+
+color:#00eaff;
+
+}
+
+
+
+.footer{
+
+margin-top:18px;
+
+font-size:11px;
+
+letter-spacing:4px;
+
+color:#444;
+
+}
+
+
+
+
+@keyframes glow{
+
+
+from{
+
+filter:
+brightness(1);
+
+}
+
+
+to{
+
+filter:
+brightness(1.35);
+
+}
+
 
 }
