@@ -1,218 +1,161 @@
-*{
-    box-sizing:border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&display=swap');
 
+*{
+box-sizing:border-box;
+}
 
 body{
 
-    margin:0;
+margin:0;
 
-    width:320px;
-    height:320px;
+width:320px;
+height:320px;
 
-    overflow:hidden;
+background:#000;
 
-    background:#000;
+overflow:hidden;
 
-    font-family:
-    "Segoe UI",
-    Arial,
-    sans-serif;
+font-family:'Rajdhani',Arial,sans-serif;
 
-    color:white;
+color:white;
 
 }
-
-
 
 .screen{
 
-    width:320px;
-    height:320px;
+width:320px;
 
-    display:flex;
+height:320px;
 
-    flex-direction:column;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-}
-
-
-
-.title{
-
-    font-size:14px;
-
-    letter-spacing:5px;
-
-    color:#777;
-
-    margin-bottom:18px;
+flex-direction:column;
 
 }
 
+.clock{
 
+display:flex;
 
-.gauges{
+align-items:flex-end;
 
-    display:flex;
+color:#f5f5f5;
 
-    gap:15px;
+text-shadow:
 
-}
-
-
-
-.gauge{
-
-    width:125px;
-
-    height:125px;
-
-    border-radius:50%;
-
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-
-    background:
-
-    radial-gradient(
-    circle,
-    #090909 55%,
-    transparent 57%
-    ),
-
-    conic-gradient(
-    #00eaff,
-    #00eaff 70%,
-    #222 70%
-    );
-
-
-    box-shadow:
-
-    0 0 18px #00eaff66,
-
-    inset 0 0 20px #00eaff33;
-
-
-    animation:
-    glow 2s infinite alternate;
+0 0 10px #ffffff55;
 
 }
 
+#time{
 
+font-size:82px;
 
+font-weight:300;
 
-.gpu{
+letter-spacing:2px;
 
+line-height:80px;
+
+}
+
+#ampm{
+
+font-size:25px;
+
+margin-left:8px;
+
+margin-bottom:12px;
+
+color:#888;
+
+}
+
+.line{
+
+height:1px;
+
+width:220px;
 
 background:
 
-radial-gradient(
-circle,
-#090909 55%,
-transparent 57%
-),
-
-conic-gradient(
-#0077ff,
-#0077ff 70%,
-#222 70%
+linear-gradient(
+90deg,
+transparent,
+#00eaff,
+transparent
 );
 
-
-box-shadow:
-
-0 0 18px #0077ff66,
-
-inset 0 0 20px #0077ff33;
-
+margin:20px 0;
 
 }
 
+.temps{
 
+display:flex;
 
-.inside{
+align-items:center;
+
+justify-content:center;
+
+gap:25px;
+
+}
+
+.item{
 
 text-align:center;
 
 }
 
+.name{
 
+font-size:22px;
 
-.label{
+letter-spacing:5px;
 
-font-size:18px;
-
-letter-spacing:2px;
-
-color:#999;
+color:#777;
 
 }
 
+.value{
 
+font-size:55px;
 
-.temp{
-
-font-size:48px;
-
-font-weight:700;
-
-}
-
-
-
-.temp small{
-
-font-size:18px;
+font-weight:600;
 
 color:#00eaff;
 
+text-shadow:
+
+0 0 15px #00eaff88;
+
 }
 
+.separator{
 
+height:70px;
 
-.footer{
+width:1px;
 
-margin-top:18px;
+background:#333;
 
-font-size:11px;
+}
 
-letter-spacing:4px;
+.bottom{
+
+position:absolute;
+
+bottom:18px;
+
+font-size:12px;
+
+letter-spacing:5px;
 
 color:#444;
-
-}
-
-
-
-
-@keyframes glow{
-
-
-from{
-
-filter:
-brightness(1);
-
-}
-
-
-to{
-
-filter:
-brightness(1.35);
-
-}
-
 
 }
