@@ -13,7 +13,7 @@
     box-sizing:border-box;
 }
 
-html, body {
+html,body{
 
     width:320px;
     height:320px;
@@ -22,118 +22,106 @@ html, body {
 
     background:#050607;
 
-    font-family:'Rajdhani',sans-serif;
+    font-family:'Orbitron',sans-serif;
 
 }
 
 
-#dashboard {
+#dashboard{
 
     width:320px;
     height:320px;
 
-    position:relative;
+}
+
+
+/* Main circle */
+
+.gauge{
+
+    left:35px;
+    top:30px;
+
+    width:250px;
+    height:250px;
 
 }
 
 
-/* Main ring */
+.ring{
 
-.gauge {
-
-    position:absolute;
-
-    left:25px;
-
-    top:20px;
-
-    width:270px;
-
-    height:270px;
+    width:250px;
+    height:250px;
 
 }
 
-
-.ring {
-
-    width:270px;
-    height:270px;
-
-}
-
-
-/* Ring thickness */
 
 .track,
-.progress {
+.progress{
 
-    stroke-width:12;
-
-}
-
-
-/* Center text */
-
-.label {
-
-    font-size:11px;
-
-    letter-spacing:3px;
+    stroke-width:8;
 
 }
 
 
-.temp {
+/* Center */
 
-    font-size:65px;
+.label{
+
+    font-size:9px;
+
+    letter-spacing:4px;
 
 }
 
 
-.usage {
+.temp{
 
-    font-size:13px;
+    font-size:55px;
 
-    letter-spacing:3px;
+    font-weight:500;
+
+}
+
+
+.usage{
+
+    font-size:10px;
 
 }
 
 
 /* Bottom GPU */
 
-.bottom {
+.bottom{
 
-    position:absolute;
+    bottom:18px;
 
-    bottom:15px;
+    left:35px;
 
-    left:25px;
-
-    right:25px;
-
-    height:50px;
+    right:35px;
 
 }
 
 
-.title {
+.title{
 
-    font-size:9px;
+    font-size:8px;
 
-    letter-spacing:2px;
-
-}
-
-
-.value {
-
-    font-size:28px;
+    letter-spacing:3px;
 
 }
 
 
-.divider {
+.value{
 
-    height:35px;
+    font-size:25px;
+
+}
+
+
+.divider{
+
+    height:30px;
 
 }
