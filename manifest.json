@@ -1,0 +1,10 @@
+{
+"name":"NZXT Z73 LM240 Temperature Display",
+"version":"1.0",
+"description":"DeepCool LM240 inspired CPU and GPU temperature display for NZXT Kraken Z73",
+"author":"Custom",
+"resolution":{
+"width":320,
+"height":320
+}
+}
