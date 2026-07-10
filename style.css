@@ -20,238 +20,108 @@ html,body{
 
     overflow:hidden;
 
-    background:var(--bg);
+    background:#050607;
 
-font-family:'Rajdhani',sans-serif;
-    color:white;
-
-}
-
-body{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+    font-family:'Rajdhani',sans-serif;
 
 }
 
 #dashboard{
 
-    position:relative;
-
     width:640px;
-
     height:640px;
 
-    background:
-    radial-gradient(circle at center,
-    #0f1114 0%,
-    #08090b 55%,
-    #040506 100%);
+    position:relative;
 
 }
 
-/* ---------- Glow ---------- */
 
-.ringGlow{
-
-    position:absolute;
-
-    width:390px;
-
-    height:390px;
-
-    border-radius:50%;
-
-    left:125px;
-
-    top:72px;
-
-    background:rgba(0,216,255,.12);
-
-    filter:blur(80px);
-
-    animation:pulse 5s ease-in-out infinite;
-
-}
-
-@keyframes pulse{
-
-    0%{opacity:.25;}
-
-    50%{opacity:.65;}
-
-    100%{opacity:.25;}
-
-}
-
-/* ---------- Gauge ---------- */
+/* Smaller gauge */
 
 .gauge{
 
     position:absolute;
 
-    left:85px;
+    left:110px;
 
-    top:35px;
+    top:55px;
 
-    width:470px;
+    width:420px;
 
-    height:470px;
+    height:420px;
 
 }
+
 
 .ring{
 
-    transform:rotate(-90deg);
+    width:420px;
+    height:420px;
 
 }
 
-/* background ring */
 
-.track{
-
-    fill:none;
-
-    stroke:#14181c;
-
-    stroke-width:18;
-
-}
-
-/* animated progress ring */
-
-.progress{
-
-    fill:none;
-
-    stroke:url(#grad);
-
-    stroke-width:18;
-
-    stroke-linecap:round;
-
-    filter:url(#glow);
-
-    stroke-dasharray:1131;
-
-    stroke-dashoffset:1131;
-
-    transition:
-
-    stroke-dashoffset .8s cubic-bezier(.22,1,.36,1);
-
-}
-
-/* ---------- Center Text ---------- */
-
-.center{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
+/* Center text */
 
 .label{
 
-    color:var(--muted);
+    font-size:16px;
 
-    font-size:18px;
-
-    font-weight:600;
-
-    letter-spacing:4px;
-
-    margin-bottom:12px;
-
-}
-
-.label{
-
-    color:#6f858d;
-
-    font-size:20px;
-
-    font-weight:500;
-
-    letter-spacing:6px;
-
-    text-transform:uppercase;
-
-    margin-bottom:8px;
+    letter-spacing:5px;
 
 }
 
 
 .temp{
 
-    font-size:120px;
+    font-size:85px;
 
-    font-weight:600;
-
-    letter-spacing:2px;
-
-    line-height:.9;
-
-    color:#ffffff;
-
-    text-shadow:
-    0 0 12px rgba(0,216,255,.35);
+    line-height:1;
 
 }
 
 
 .usage{
 
-    margin-top:15px;
+    font-size:18px;
 
-    font-size:22px;
+    margin-top:8px;
 
-    letter-spacing:5px;
+}
 
-    color:#00d8ff;
 
-    text-transform:uppercase;
+
+/* Bottom GPU section */
+
+.bottom{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:60px;
+
+    right:60px;
+
+    height:90px;
 
 }
 
 
 .title{
 
-    color:#71838b;
+    font-size:14px;
 
-    font-size:17px;
-
-    font-weight:500;
-
-    letter-spacing:5px;
-
-    text-transform:uppercase;
+    letter-spacing:4px;
 
 }
 
 
 .value{
 
-    font-size:55px;
+    font-size:42px;
 
-    font-weight:600;
-
-    color:white;
-
-    text-shadow:
-    0 0 10px rgba(0,216,255,.25);
+}
 
 }
 
