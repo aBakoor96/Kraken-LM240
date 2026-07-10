@@ -13,10 +13,10 @@
     box-sizing:border-box;
 }
 
-html,body{
+html, body {
 
-    width:640px;
-    height:640px;
+    width:320px;
+    height:320px;
 
     overflow:hidden;
 
@@ -26,113 +26,114 @@ html,body{
 
 }
 
-#dashboard{
 
-    width:640px;
-    height:640px;
+#dashboard {
+
+    width:320px;
+    height:320px;
 
     position:relative;
 
 }
 
 
-/* Smaller gauge */
+/* Main ring */
 
-.gauge{
+.gauge {
 
     position:absolute;
 
-    left:110px;
+    left:25px;
 
-    top:55px;
+    top:20px;
 
-    width:420px;
+    width:270px;
 
-    height:420px;
+    height:270px;
 
 }
 
 
-.ring{
+.ring {
 
-    width:420px;
-    height:420px;
+    width:270px;
+    height:270px;
+
+}
+
+
+/* Ring thickness */
+
+.track,
+.progress {
+
+    stroke-width:12;
 
 }
 
 
 /* Center text */
 
-.label{
+.label {
 
-    font-size:16px;
+    font-size:11px;
 
-    letter-spacing:5px;
-
-}
-
-
-.temp{
-
-    font-size:85px;
-
-    line-height:1;
+    letter-spacing:3px;
 
 }
 
 
-.usage{
+.temp {
 
-    font-size:18px;
-
-    margin-top:8px;
+    font-size:65px;
 
 }
 
 
+.usage {
 
-/* Bottom GPU section */
+    font-size:13px;
 
-.bottom{
+    letter-spacing:3px;
+
+}
+
+
+/* Bottom GPU */
+
+.bottom {
 
     position:absolute;
 
-    bottom:35px;
+    bottom:15px;
 
-    left:60px;
+    left:25px;
 
-    right:60px;
+    right:25px;
 
-    height:90px;
-
-}
-
-
-.title{
-
-    font-size:14px;
-
-    letter-spacing:4px;
+    height:50px;
 
 }
 
 
-.value{
+.title {
 
-    font-size:42px;
+    font-size:9px;
+
+    letter-spacing:2px;
 
 }
 
+
+.value {
+
+    font-size:28px;
+
 }
 
-.divider{
 
-    width:1px;
+.divider {
 
-    height:65px;
-
-    background:#22292d;
-
-    box-shadow:0 0 10px rgba(255,255,255,.05);
+    height:35px;
 
 }
