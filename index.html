@@ -2,154 +2,75 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>LM240 Style Temp Display</title>
+<meta name="viewport" content="width=320,height=320">
+<title>NZXT Z73 LM240 Display</title>
 
-<style>
-html, body {
-    margin:0;
-    padding:0;
-    width:100%;
-    height:100%;
-    background:#050505;
-    font-family:Arial, Helvetica, sans-serif;
-    overflow:hidden;
-    color:white;
-}
-
-.container {
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.title {
-    font-size:22px;
-    letter-spacing:4px;
-    color:#888;
-    margin-bottom:20px;
-}
-
-.line {
-    width:70%;
-    height:2px;
-    background:#00e5ff;
-    margin-bottom:25px;
-}
-
-.temp-box {
-    width:80%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin:15px;
-}
-
-.label {
-    font-size:25px;
-    color:#999;
-}
-
-.value {
-    font-size:70px;
-    font-weight:bold;
-}
-
-.unit {
-    font-size:35px;
-    color:#00e5ff;
-}
-
-.footer {
-    position:absolute;
-    bottom:20px;
-    font-size:14px;
-    color:#555;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="screen">
 
     <div class="title">
-        SYSTEM TEMPERATURE
-    </div>
-
-    <div class="line"></div>
-
-
-    <div class="temp-box">
-        <div class="label">CPU</div>
-        <div>
-            <span class="value" id="cpu">--</span>
-            <span class="unit">°C</span>
-        </div>
+        TEMPERATURE
     </div>
 
 
-    <div class="temp-box">
-        <div class="label">GPU</div>
-        <div>
-            <span class="value" id="gpu">--</span>
-            <span class="unit">°C</span>
+    <div class="gauges">
+
+
+        <div class="gauge cpu">
+
+            <div class="inside">
+
+                <div class="label">
+                    CPU
+                </div>
+
+                <div class="temp">
+                    <span id="cpuTemp">--</span>
+                    <small>°C</small>
+                </div>
+
+            </div>
+
         </div>
+
+
+
+        <div class="gauge gpu">
+
+            <div class="inside">
+
+                <div class="label">
+                    GPU
+                </div>
+
+                <div class="temp">
+                    <span id="gpuTemp">--</span>
+                    <small>°C</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer">
+        KRAKEN Z73
     </div>
 
 
 </div>
 
 
-<div class="footer">
-    NZXT Z73 Custom LCD
-</div>
-
-
-
-<script>
-
-window.nzxt = {
-    v1: {
-
-        onMonitoringDataUpdate: function(data){
-
-            let cpuTemp = "--";
-            let gpuTemp = "--";
-
-
-            if(data.cpus && data.cpus.length > 0){
-                cpuTemp = Math.round(
-                    data.cpus[0].temperature
-                );
-            }
-
-
-            if(data.gpus && data.gpus.length > 0){
-                gpuTemp = Math.round(
-                    data.gpus[0].temperature
-                );
-            }
-
-
-            document.getElementById("cpu").innerHTML =
-                cpuTemp;
-
-
-            document.getElementById("gpu").innerHTML =
-                gpuTemp;
-
-        }
-
-    }
-};
-
-
-</script>
-
+<script src="script.js"></script>
 
 </body>
 </html>
